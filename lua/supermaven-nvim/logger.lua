@@ -20,8 +20,6 @@ local join_path = function(...)
   local is_windows = loop.os_uname().version:match("Windows") -- could be "Windows" or "Windows_NT"
   local path_sep = is_windows and "\\" or "/"
 
-  local foo = table.concat(vim.iter({ ... }))
-  print(foo)
   -- if vim.version().minor >= 10 then
   --   return table.concat(vim.iter({ ... }):flatten():totable(), path_sep):gsub(path_sep .. "+", path_sep)
   -- end
