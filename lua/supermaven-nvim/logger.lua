@@ -22,7 +22,6 @@ local join_path = function(...)
 
   local foo = table.concat(vim.iter({ ... }))
   print(foo)
-  adsadsa
   if vim.version().minor >= 10 then
     return table.concat(vim.iter({ ... }):flatten():totable(), path_sep):gsub(path_sep .. "+", path_sep)
   end
