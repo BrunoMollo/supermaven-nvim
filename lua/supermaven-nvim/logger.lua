@@ -19,9 +19,14 @@ local level_values = {
 local join_path = function(...)
   local is_windows = loop.os_uname().version:match("Windows") -- could be "Windows" or "Windows_NT"
   local path_sep = is_windows and "\\" or "/"
-  -- if vim.version().minor >= 10 then
-  --   return table.concat(vim.iter({ ... }):flatten():totable(), path_sep):gsub(path_sep .. "+", path_sep)
-  -- end
+
+  local foo = table.concat(vim.iter({ ... }))
+  print(foo)
+  adsadsa
+  if vim.version().minor >= 10 then
+    return table.concat(vim.iter({ ... }):flatten():totable(), path_sep):gsub(path_sep .. "+", path_sep)
+  end
+
   return table.concat(vim.tbl_flatten({ ... }), path_sep):gsub(path_sep .. "+", path_sep)
 end
 
